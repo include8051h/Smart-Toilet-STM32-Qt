@@ -1,0 +1,86 @@
+# ======================
+# 智慧公厕系统专属 .gitignore
+# 同时保护 STM32 Keil 工程 + Qt 上位机工程
+# ======================
+
+# ======================
+# 通用忽略（操作系统/编辑器）
+# ======================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ======================
+# 🔧 STM32 Keil 工程 (STM32code/)
+# ======================
+# 编译输出目录（关键！避免上传500MB+）
+STM32code/Objects/
+STM32code/Listings/
+STM32code/DebugConfig/
+STM32code/*.hex
+STM32code/*.axf
+STM32code/*.elf
+STM32code/*.map
+STM32code/*.htm
+STM32code/*.sct
+STM32code/*.tra
+STM32code/*.dep
+
+# 用户配置文件（含调试器设置，避免冲突）
+STM32code/*.uvoptx
+STM32code/*.uvguix.*
+STM32code/*.uvmpw
+STM32code/EventRecorderStub.scvd
+
+# 临时文件
+STM32code/*.bak
+STM32code/*.tmp
+
+# ======================
+#  Qt 上位机工程 (Qtcode/)
+# ======================
+# 编译输出目录（关键！）
+Qtcode/build-*/
+Qtcode/debug/
+Qtcode/release/
+Qtcode/*.pro.user
+Qtcode/*.pro.user.*
+Qtcode/*.creator
+Qtcode/*.creator.user
+Qtcode/*.files
+Qtcode/*.includes
+Qtcode/*.autosave
+
+# 自动生成代码
+Qtcode/moc_*.cpp
+Qtcode/ui_*.h
+Qtcode/qrc_*.cpp
+Qtcode/*.moc
+
+# 二进制文件
+Qtcode/*.exe
+Qtcode/*.dll
+Qtcode/*.so
+Qtcode/*.dylib
+Qtcode/*.app
+
+# CMake 临时文件（如使用）
+Qtcode/CMakeFiles/
+Qtcode/CMakeCache.txt
+Qtcode/cmake_install.cmake
+
+# ======================
+#  其他临时文件
+# ======================
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
